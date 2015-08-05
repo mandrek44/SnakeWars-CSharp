@@ -6,28 +6,28 @@ namespace SnakeWars.SampleBot
 {
     internal class GameBoardState
     {
-        private readonly GameStateDTO _gameState;
+        public readonly GameStateDTO gameState;
 
         public GameBoardState(GameStateDTO gameState)
         {
-            _gameState = gameState;
+            this.gameState = gameState;
         }
 
         public PointDTO GetSnakeNewHeadPosition(string snakeId, Move move)
         {
             var snake = GetSnake(snakeId);
-            var newHead = move.GetSnakeNewHead(snake, _gameState.BoardSize);
+            var newHead = move.GetSnakeNewHead(snake, gameState.BoardSize);
             return newHead;
         }
         
         public HashSet<PointDTO> GetOccupiedCells()
         {
-            return new HashSet<PointDTO>(_gameState.Walls.Concat(_gameState.Snakes.SelectMany(snake => snake.Cells)));
+            return new HashSet<PointDTO>(gameState.Walls.Concat(gameState.Snakes.SelectMany(snake => snake.Cells)));
         }
 
         public SnakeDTO GetSnake(string snakeId)
         {
-            return _gameState.Snakes.First(s => s.Id == snakeId);
+            return gameState.Snakes.First(s => s.Id == snakeId);
         }
     }
 }

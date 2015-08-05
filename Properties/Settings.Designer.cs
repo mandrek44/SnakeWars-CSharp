@@ -25,7 +25,7 @@ namespace SnakeWars.SampleBot.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        [global::System.Configuration.DefaultSettingValueAttribute("23.102.19.24")]
         public string ServerHost {
             get {
                 return ((string)(this["ServerHost"]));
@@ -49,7 +49,7 @@ namespace SnakeWars.SampleBot.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("PL1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("006HAP")]
         public string LoginId {
             get {
                 return ((string)(this["LoginId"]));
